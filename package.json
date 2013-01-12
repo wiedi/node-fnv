@@ -1,0 +1,8 @@
+{
+	"name":        "fnv",
+	"version":     "0.1.0",
+	"author":      "Sebastian Wiedenroth <wiedi@frubar.net>",
+	"description": "Fowler–Noll–Vo hash implementation (FNV-1a 32-bit)",
+	"url":         "https://github.com/wiedi/node-fnv",
+	"main":        "fnv.js"
+}
