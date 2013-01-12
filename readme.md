@@ -2,6 +2,9 @@
 
 Fowler–Noll–Vo (FNV-1a 32-bit) hash implementation for node.js
 
+## Install
+
+	npm install fnv
 
 ## Usage
 
