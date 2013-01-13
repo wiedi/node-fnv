@@ -1,8 +1,6 @@
 "use strict";
 /* implement http://tools.ietf.org/html/draft-eastlake-fnv-04 */
 
-var util = require('util');
-
 function FNV() {
 	this.hash = 0x811C9DC5 /* offset_basis */
 }
@@ -20,6 +18,9 @@ FNV.prototype = {
 		var buf = new Buffer(4)
 		buf.writeInt32BE(this.hash & 0xffffffff, 0)
 		return buf.toString(encoding)
+	},
+	value: function() {
+		return this.hash & 0xffffffff
 	}
 }
 
