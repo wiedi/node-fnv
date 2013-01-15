@@ -1,15 +1,41 @@
-var filename = process.argv[2]
+"use strict";
+var assert = require("assert")
 var FNV = require('./fnv').FNV
-var fs = require('fs')
 
-h = new FNV()
+suite('FNV')
 
-var s = fs.ReadStream(filename);
-s.on('data', function(d) {
-  h.update(d);
-});
+test('#init', function(){
+	var h = new FNV()
+	assert.equal(h.digest("hex"), "811c9dc5")
+})
 
-s.on('end', function() {
-  var d = h.digest('hex');
-  console.log(d + '  ' + filename);
-});
+test('#empty', function(){
+	var h = new FNV()
+	h.update(Buffer(""))
+	assert.equal(h.digest("hex"), "811c9dc5")
+})
+
+test('#foobar', function(){
+	var h = new FNV()
+	h.update(Buffer("foobar"))
+	assert.equal(h.digest("hex"), "bf9cf968")
+})
+
+test('#a', function(){
+	var h = new FNV()
+	h.update(Buffer("a"))
+	assert.equal(h.digest("hex"), "e40c292c")
+})
+
+test('#foobar-zero', function(){
+	var h = new FNV()
+	h.update(Buffer("foobar\0"))
+	assert.equal(h.digest("hex"), "0c1c9eb8")
+})
+
+test('#foo split bar', function(){
+	var h = new FNV()
+	h.update(Buffer("foo"))
+	h.update(Buffer("bar"))
+	assert.equal(h.digest("hex"), "bf9cf968")
+})

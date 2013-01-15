@@ -4,5 +4,11 @@
 	"author":      "Sebastian Wiedenroth <wiedi@frubar.net>",
 	"description": "Fowler–Noll–Vo hash implementation (FNV-1a 32-bit)",
 	"url":         "https://github.com/wiedi/node-fnv",
-	"main":        "fnv.js"
+	"main":        "fnv.js",
+	"scripts": {
+		"test": "mocha -u qunit -R list"
+	},
+	"devDependencies": {
+		"mocha": "*"
+	}
 }
