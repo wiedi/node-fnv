@@ -7,6 +7,11 @@ function FNV() {
 
 FNV.prototype = {
 	update: function(data) {
+		if(typeof data === 'string') {
+			data = Buffer(data)
+		} else if(!(data instanceof Buffer)) {
+			throw Error("FNV.update expectes String or Buffer")
+		}
 		for(var i = 0; i < data.length; i++) {
 			this.hash = this.hash ^ data[i]
 			/* 32 bit FNV_Prime = 2**24 + 2**8 + 0x93 */
