@@ -1,4 +1,5 @@
-"use strict";
+"use strict"
+
 var assert = require("assert")
 var FNV = require('./fnv').FNV
 

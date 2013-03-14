@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 /* implement http://tools.ietf.org/html/draft-eastlake-fnv-04 */
 
 function FNV() {
