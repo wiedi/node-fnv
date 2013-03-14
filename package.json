@@ -10,5 +10,11 @@
 	},
 	"devDependencies": {
 		"mocha": "*"
-	}
+	},
+	"licenses": [
+		{
+			"name": "BSD",
+			"url": "http://opensource.org/licenses/BSD-3-Clause"
+		}
+	]
 }
