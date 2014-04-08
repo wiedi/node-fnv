@@ -5,6 +5,10 @@ var FNV = require('./fnv').FNV
 
 suite('FNV')
 
+test('Chainable .update()', function(){
+    assert.equal(new FNV().update("foobar").digest("hex"), "bf9cf968");
+})
+
 test('#init', function(){
 	var h = new FNV()
 	assert.equal(h.digest("hex"), "811c9dc5")
