@@ -18,8 +18,8 @@ FNV.prototype = {
 			this.hash += (this.hash << 24) + (this.hash << 8) + (this.hash << 7) + (this.hash << 4) + (this.hash << 1)
 		}
 
-        // Make API chainable
-        return this;
+		// Make API chainable
+		return this;
 	},
 	digest: function(encoding) {
 		encoding = encoding || "binary"
